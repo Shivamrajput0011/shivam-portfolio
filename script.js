@@ -49,3 +49,31 @@ if (navToggle) {
     navMenu.classList.toggle('active');
   });
 }
+const typingText = ["Web Developer", "Tech Enthusiast", "Learner"];
+let index = 0, charIndex = 0;
+const typedSpan = document.getElementById("typed-text");
+
+function type() {
+  if (charIndex < typingText[index].length) {
+    typedSpan.textContent += typingText[index].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 100);
+  } else {
+    setTimeout(erase, 1500);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    typedSpan.textContent = typingText[index].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, 50);
+  } else {
+    index = (index + 1) % typingText.length;
+    setTimeout(type, 500);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", type);
+
+

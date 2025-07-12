@@ -195,3 +195,22 @@ body.dark-mode #scrollTopBtn {
 .nav-toggle {
   display: none;
 }
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1em;
+  border: 3px solid #f39c12;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.profile-pic:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+#typed-text {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #f39c12;
+}
+
